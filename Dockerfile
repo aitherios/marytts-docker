@@ -6,11 +6,13 @@ RUN apk update && \
   apk add ca-certificates wget && \
   update-ca-certificates
 
-RUN wget https://github.com/marytts/marytts/archive/master.zip && \
-  unzip master.zip && \
-  rm master.zip && \
-  cd marytts-master && \
+RUN wget https://github.com/aitherios/marytts/archive/feature/add-pt-language.zip && \
+  unzip add-pt-language.zip && \
+  rm add-pt-language.zip && \
+  cd marytts-feature-add-pt-language && \
   ./gradlew build
 
-CMD /marytts-master/gradlew run
+WORKDIR /marytts-feature-add-pt-language
+
+CMD ["./gradlew", "run"]
 EXPOSE 59125
