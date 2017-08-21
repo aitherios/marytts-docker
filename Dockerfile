@@ -10,5 +10,7 @@ RUN wget https://github.com/marytts/marytts/releases/download/v5.2/marytts-5.2.z
   unzip marytts-5.2.zip && \
   rm marytts-5.2.zip
 
-CMD ["sh", "/marytts-5.2/bin/marytts-server"]
+WORKDIR /marytts-5.2
+
+CMD ["sh", "bin/marytts-server"]
 EXPOSE 59125
