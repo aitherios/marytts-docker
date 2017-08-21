@@ -12,5 +12,7 @@ RUN wget https://github.com/marytts/marytts/archive/master.zip && \
   cd marytts-master && \
   ./gradlew build
 
-CMD /marytts-master/gradlew run
+WORKDIR /marytts-master
+
+CMD ["./gradlew", "run"]
 EXPOSE 59125
