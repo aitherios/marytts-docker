@@ -1,5 +1,7 @@
 FROM openjdk:8-jdk-alpine
 
+MAINTAINER Renan Mendes Carvalho <aitherios@gmail.com>
+
 RUN apk update && \
   apk add ca-certificates wget && \
   update-ca-certificates
